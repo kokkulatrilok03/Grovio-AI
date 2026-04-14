@@ -5,7 +5,7 @@ import Editor from "./components/Editor";
 import Preview from "./components/Preview";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000"
+  baseURL: process.env.REACT_APP_API_URL || "https://markdown-notes-backend-4jok.onrender.com"
 });
 
 const App = () => {
