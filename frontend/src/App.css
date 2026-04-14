@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f6fa;
+  color: #1f2937;
+}
+
+.app-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background: #f5f6fa;
+}
+
+.sidebar {
+  border-right: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar h2,
+.panel h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.notes-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.note-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.note-item:hover {
+  border-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+.note-item.active {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.note-title {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.editor-panel {
+  gap: 10px;
+}
+
+.title-input,
+.content-input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.title-input:focus,
+.content-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.content-input {
+  flex: 1;
+  min-height: 300px;
+  resize: none;
+  line-height: 1.5;
+}
+
+.preview-panel {
+  overflow: hidden;
+}
+
+.markdown-body {
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  margin-top: 0.8em;
+}
+
+.primary-btn,
+.danger-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.danger-btn {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.empty-text {
+  margin: 0;
+  color: #6b7280;
+}
+
+.save-indicator {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  .app-container {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
